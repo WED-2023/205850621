@@ -1,147 +1,310 @@
 :root {
-    --primary-color: #252525; /* Dark grey for text and important elements */
-    --secondary-color: #ff4081; /* Vibrant pink for accents */
-    --background-color: #f4f4f4; /* Light grey background */
-    --menu-hover-color: #cccccc; /* Light grey for menu hover */
-    --text-color: #333; /* Dark grey for regular text */
-    --font-family: 'Arial', sans-serif; /* Clean and modern font */
-    --header-font-family: 'Georgia', serif; /* Elegant font for headings */
-    --link-hover-color: #ffffff; /* Bright white for hover effects */
+    --primary-color: #252525;
+    --secondary-color: #ff4081;
+    --background-color: #f4f4f4;
+    --menu-hover-color: #cccccc;
+    --text-color: #333;
+    --font-family: 'Arial', sans-serif;
+    --header-font-family: 'Georgia', serif;
+    --link-hover-color: #ffffff;
+    --header-height: 50px; /* Adjusted height */
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     margin: 0;
-    font-family: var(--font-family);
+    font-family: 'Assistant', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
-    font-size: 18px; /* Increased font size for better readability */
+    padding-top: 60px; /* Adjusted to match header height */
 }
 
 header {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 30px 50px; /* Increased padding for a more spacious look */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
     display: flex;
-    justify-content: space-between; /* Aligns logo and nav to the sides */
+    justify-content: space-between; /* Adjust this to 'flex-start' to bring items closer */
     align-items: center;
+    padding: 10px 20px; /* You might need to adjust padding for proper spacing */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-header .logo img {
-    height: 100px; /* Increased logo size for better visibility */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Adjust or remove if necessary to bring the menu closer to the logo */
 }
 
 #menu {
-    list-style: none;
     display: flex;
-    gap: 30px; /* Increased space between menu items */
-    margin: 0;
-    font-size: 20px; /* Larger font size for easier navigation */
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Ensure no additional margin */
+    flex-grow: 1; /* Allows the menu to take up available space if needed */
 }
 
 #menu li a {
-    color: white;
+    color: var(--primary-color);
     text-decoration: none;
-    padding: 15px;
-    transition: color 0.3s, background-color 0.3s;
+    font-size: 16px;
+    padding: 8px 12px;
+    display: block;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    background-color: transparent;
 }
 
 #menu li a:hover, #menu li a:focus {
     color: var(--link-hover-color);
     background-color: var(--menu-hover-color);
-    border-radius: 8px; /* Slightly larger radius for smoother hover effect */
+}
+
+#menu li a:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .section {
-    margin: 50px; /* Slightly larger margin for more distinct sections */
-    padding: 30px; /* Increased padding for more space inside sections */
+    margin: 20px 50px;
+    padding: 30px;
     background-color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow for better depth perception */
-    border-left: 10px solid var(--secondary-color); /* Thicker border for better visibility */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-left: 5px solid var(--secondary-color);
 }
 
 h1, h2, h3 {
     font-family: var(--header-font-family);
-    margin-bottom: 30px; /* Increased margin for clearer sectioning */
+    margin-bottom: 20px;
     color: var(--primary-color);
+    text-align: center;
+    cursor: pointer;
+    position: relative; /* Needed for positioning pseudo-element */
+}
+
+h1:hover::after, h2:hover::after, h3:hover::after {
+    content: ''; /* Add content for pseudo-element */
+    position: absolute;
+    bottom: -5px; /* Adjust the distance from the title */
+    left: 0;
+    width: 100%;
+    height: 2px; /* Thickness of the underline */
+    background-color: var(--secondary-color); /* Color of the underline */
+}
+h1, h2, h3 {
+    font-family: var(--header-font-family);
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-align: center;
+    cursor: pointer; /* Add pointer cursor to indicate interactivity */
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
+}
+
+h1:hover, h2:hover, h3:hover {
+    transform: translateY(-5px); /* Float effect - move titles up */
 }
 
 h2 {
-    font-size: 28px; /* Larger heading size for better visibility */
+    font-size: 24px;
 }
 
-.photo-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Larger minimum size for images */
-    gap: 20px; /* Increased gap for better separation of images */
-}
-
-.gallery-img img {
-    border-radius: 10px; /* Larger radius for softer image edges */
-    transition: transform 0.5s ease-in-out; /* Smoother transition for hover effect */
-}
-
-.gallery-img img:hover {
-    transform: scale(1.1); /* More noticeable scale to indicate interactivity */
+h3 {
+    font-size: 20px;
 }
 
 footer {
-    padding: 30px; /* Increased padding for a more substantial footer */
+    text-align: center;
+    padding: 20px;
     background-color: var(--primary-color);
+    color: white;
 }
 
-form input, form textarea, form select {
-    padding: 15px; /* More padding for easier interaction */
-    font-size: 18px; /* Larger font size for forms */
+form {
+    max-width: 500px; /* Limit form width for better readability */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Add consistent spacing between form groups */
+}
+
+.form-group label {
+    display: block; /* Ensure labels are on their own line */
+    margin-bottom: 5px; /* Add spacing below labels */
+    color: var(--primary-color); /* Set label color */
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea,
+form select {
+    width: 100%; /* Make form elements fill their container */
+    padding: 10px; /* Adjust padding for better input area */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 form button {
-    padding: 15px 30px; /* Larger button for easier clicking */
-    font-size: 20px; /* Increased font size for clearer text on buttons */
+    width: 100%; /* Make button fill its container */
+    padding: 10px; /* Adjust padding for better button appearance */
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 form button:hover {
-    background-color: #e6005c; /* A darker shade of the accent color for hover state */
+    background-color: darken(var(--secondary-color), 10%);
 }
-/* Enhanced Title Styling */
-.title {
-    text-align: center; /* Center-aligns the title */
-    font-size: 2.5em; /* Makes title larger */
-    color: var(--primary-color);
-    position: relative;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
+form {
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-.title:hover {
-    color: var(--secondary-color); /* Changes color on hover */
+.form-group {
+    margin-bottom: 20px;
 }
 
-.title::after {
-    content: '';
+.form-group label {
     display: block;
-    width: 0;
-    height: 3px;
-    background: var(--secondary-color);
-    transition: width 0.5s ease;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: darken(var(--secondary-color), 10%);
+}
+
+.emoji-container {
+    position: relative;
+    display: inline-block;
+}
+
+.emoji-btn {
+    padding: 10px;
+    font-size: 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.emoji-panel {
     position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: calc(100% + 5px);
+    left: 0;
+    display: none;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.title:hover::after {
-    width: 50%; /* Underline expands on hover */
+.emoji-panel span {
+    cursor: pointer;
+    padding: 5px;
 }
 
-/* Adding shadow for 3D effect on hover */
-.title:hover {
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+.emoji-panel span:hover {
+    background-color: #ddd;
 }
 
-/* Accessibility with focus */
-.title:focus {
-    outline: none;
-    color: var(--secondary-color);
-    box-shadow: 0 0 5px var(--secondary-color);
+.slideshow-container {
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slides {
+    flex: 1 0 80%; /* Main image takes more space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slides img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.prev-slide-preview, .next-slide-preview {
+    flex: 1 0 10%; /* Smaller flex basis for previews */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    height: 100px; /* Smaller than main image */
+}
+
+.prev-slide-preview img, .next-slide-preview img {
+    width: auto;
+    height: 100%; /* Fill the preview container */
+    opacity: 0.5; /* Slightly faded to distinguish from the main image */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 15;
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-slide-preview:hover img, .next-slide-preview:hover img {
+    opacity: 0.8; /* Increase opacity on hover for better visibility */
 }

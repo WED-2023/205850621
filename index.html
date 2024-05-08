@@ -14,22 +14,21 @@
         <div class="logo">
             <img src="cherlogo.jpg" alt="Cher Logo" style="height: 100px;"> <!-- Adjust size as needed -->
         </div>
-        <nav id="menu">
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#photos">My Photos</a></li>
-                <li><a href="#playlist">My Playlist</a></li>
-                <li><a href="#like">Like</a></li>
-                <li><a href="#qrcoder">QR Code</a></li>
-                <li><a href="#spa">Q&A</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-            </ul>
-        </nav>
+        <ul id="menu">
+            <li><a href="#about">About Me</a></li>  <!-- Newly added menu item -->
+            <li><a href="#photos">My Photos</a></li>
+            <li><a href="#featured-video">My Playlist</a></li>
+            <li><a href="#like">Like</a></li>
+            <li><a href="#qrcode">QR Code</a></li>
+            <li><a href="#qa">Q&A</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
     </header>
+    
     <main>
         <article>
             <section id="about" class="section">
-                <h2 class="title" tabindex="0">About Me</h2>
+                <h2>About Me</h2>
             <p>Hello, I'm Cher, often called the "Goddess of Pop." Born Cherilyn Sarkisian on May 20, 1946, in El Centro, California, I've been a part of the entertainment world for over six decades, shaping the music and film industry with my distinctive voice and dynamic presence.
 
                 My Journey
@@ -49,16 +48,18 @@
 
         <section id="photos" class="section">
             <h2 class="title" tabindex="0">My Photos</h2>
-            <div class="photo-gallery">
-                <!-- <img src="cher1.jpg" alt="Cher with Madonna" class="gallery-img"> -->
+            <div class="slideshow-container">
+                <div class="mySlides fade">
                 <img src="cher2.jpg" alt="Cher performing with Tina Turner" class="gallery-img">
-                <!-- <img src="cher3.jpg" alt="Cher and Tina Turner in the past" class="gallery-img"> -->
                 <img src="cher4.jpg" alt="Cher with her child" class="gallery-img">
                 <img src="cher5.jpg" alt="Cher in Burlesque movie poster" class="gallery-img">
                 <img src="cher6.jpg" alt="Classic portrait of Cher" class="gallery-img">
                 <img src="cher7.jpg" alt="Cher in a black and white photo" class="gallery-img">
                 <img src="cher8.jpg" alt="Another classic portrait of Cher" class="gallery-img">
             </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>      
         </section>
         
 
@@ -83,7 +84,7 @@
             <img src="images/qrcode.png" alt="Scan this QR code to visit our page" class="qr-code">
         </section>
 
-        <section id="spa" class="section">
+        <section id="qa" class="section">
             <h2>Q&A</h2>
             <p>
                 Differences Between Web1, Web2, and Web3
@@ -122,15 +123,7 @@
         
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-        
-                <label for="subject">Subject:</label>
-                <select id="subject" name="subject">
-                    <option value="inquiry">General Inquiry</option>
-                    <option value="booking">Booking</option>
-                    <option value="press">Press</option>
-                    <option value="fanmail">Fan Mail</option>
-                    <option value="other">Other</option>
-                </select>
+    
         
                 <label for="emoji">Choose an Emoji:</label>
                 <select id="emoji" name="emoji">
@@ -175,6 +168,65 @@
             messageBox.value += ' ' + this.value; // Adds the selected emoji to the message content
         });
         </script>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("gallery-img");
+              if (n > slides.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";
+              }
+              slides[slideIndex-1].style.display = "block";
+            }
+            </script>
+        <script>
+document.querySelector('.prev').addEventListener('click', function() {
+    slideShow(-1);
+});
+document.querySelector('.next').addEventListener('click', function() {
+    slideShow(1);
+});
+
+let currentSlide = 0;
+function slideShow(step) {
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slides img').length;
+    currentSlide = (currentSlide + step + totalSlides) % totalSlides;
+    slides.style.transform = `translateX(-${currentSlide * 820}px)`; // 800px image width + 20px margin
+}
+            </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const slides = document.querySelectorAll('.mySlides');
+                let slideIndex = 0;
+                showSlides();
+            
+                function showSlides() {
+                    let i;
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = 'none';
+                    }
+                    slideIndex++;
+                    if (slideIndex > slides.length) {
+                        slideIndex = 1;
+                    }
+                    slides[slideIndex - 1].style.display = 'block';
+                    setTimeout(showSlides, 2000); // Change image every 2 seconds
+                }
+            });
+            </script>
         
 </body>
 </html>
