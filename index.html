@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="cherlogo.jpg" alt="Cher Logo" style="height: 100px;"> <!-- Adjust size as needed -->
+            <img src="pictures/cherlogo.jpg" alt="Cher Logo" style="height: 100px;"> <!-- Adjust size as needed -->
         </div>
         <ul id="menu">
             <li><a href="#about">About Me</a></li>  <!-- Newly added menu item -->
@@ -49,12 +49,12 @@
             <h2 class="title" tabindex="0">My Photos</h2>
             <div class="slideshow-container">
                 <div class="mySlides fade">
-                <img src="cher2.jpg" alt="Cher performing with Tina Turner" class="gallery-img">
-                <img src="cher4.jpg" alt="Cher with her child" class="gallery-img">
-                <img src="cher5.jpg" alt="Cher in Burlesque movie poster" class="gallery-img">
-                <img src="cher6.jpg" alt="Classic portrait of Cher" class="gallery-img">
-                <img src="cher7.jpg" alt="Cher in a black and white photo" class="gallery-img">
-                <img src="cher8.jpg" alt="Another classic portrait of Cher" class="gallery-img">
+                <img src="pictures\cher2.jpg" alt="Cher performing with Tina Turner" class="gallery-img">
+                <img src="pictures\cher4.jpg" alt="Cher with her child" class="gallery-img">
+                <img src="pictures\cher5.jpg" alt="Cher in Burlesque movie poster" class="gallery-img">
+                <img src="pictures\cher6.jpg" alt="Classic portrait of Cher" class="gallery-img">
+                <img src="pictures\cher7.jpg" alt="Cher in a black and white photo" class="gallery-img">
+                <img src="pictures\cher8.jpg" alt="Another classic portrait of Cher" class="gallery-img">
             </div>
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -64,7 +64,7 @@
 
         <section id="featured-video" class="section">
             <h2>Featured Video</h2>
-            <div class="video-container">
+            <div class="video-container interactive">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/wwCykGDEp7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <p>Check out this special performance!</p>
@@ -80,8 +80,11 @@
         <section id="qrcode" class="section">
             <h2>Scan this QR Code</h2>
             <p>Scan the QR code with your mobile device to access exclusive content or visit a specific page.</p>
-            <img src="images/qrcode.png" alt="Scan this QR code to visit our page" class="qr-code">
+            <div class="qr-container interactive">
+                <img src="pictures/qrcode.png" alt="Scan this QR code to visit our page" class="qr-code">
+            </div>
         </section>
+        
 
         <section id="qa" class="section">
             <h2>Q&A</h2>
@@ -119,25 +122,27 @@
             <form action="submit_form.php" method="POST">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
-        
+            
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-    
-        
-                <label for="emoji">Choose an Emoji:</label>
-                <select id="emoji" name="emoji">
-                    <option value="😀">Happy</option>
-                    <option value="😢">Sad</option>
-                    <option value="😎">Cool</option>
-                    <option value="😡">Angry</option>
-                    <option value="❤️">Love</option>
-                </select>
-        
+            
+            
+                <label>Choose an Emoji:</label>
+                <div class="emoji-picker">
+                    <span role="img" aria-label="happy" onclick="addEmoji('😀')">😀</span>
+                    <span role="img" aria-label="sad" onclick="addEmoji('😢')">😢</span>
+                    <span role="img" aria-label="cool" onclick="addEmoji('😎')">😎</span>
+                    <span role="img" aria-label="angry" onclick="addEmoji('😡')">😡</span>
+                    <span role="img" aria-label="love" onclick="addEmoji('❤️')">❤️</span>
+                </div>
+                
+
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required></textarea>
-        
+            
                 <button type="submit">Send</button>
             </form>
+            
         </section>
         
         
@@ -225,7 +230,36 @@ function slideShow(step) {
                     setTimeout(showSlides, 2000); // Change image every 2 seconds
                 }
             });
+            // Improved slideshow functionality
+document.addEventListener('DOMContentLoaded', function() {
+    let slideIndex = 0;  // Initialize slide index
+    showSlides();  // Initial call to function
+
+    function showSlides() {
+        let slides = document.querySelectorAll('.mySlides .gallery-img'); // Select only images within the slideshow
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';  // Hide all images
+        }
+        slideIndex++;  // Move to the next image
+        if (slideIndex > slides.length) slideIndex = 1;  // Loop back to the first image
+        slides[slideIndex - 1].style.display = 'block';  // Display the current image
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+});
+function addEmoji(emoji) {
+    const messageInput = document.getElementById('message');
+    messageInput.value += emoji;  // Append the selected emoji to the message input
+}
+
+function addEmoji(emoji) {
+    const messageInput = document.getElementById('message');
+    messageInput.value += emoji;  // Append the selected emoji to the message input
+
+}
+
             </script>
+
+
         
 </body>
 </html>
