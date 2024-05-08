@@ -1,6 +1,6 @@
 :root {
     --primary-color: #252525;
-    --secondary-color: #ff4081;
+    --secondary-color: #e76194;
     --background-color: #f4f4f4;
     --menu-hover-color: #cccccc;
     --text-color: #333;
@@ -259,7 +259,7 @@ form button:hover {
 }
 
 .emoji-active {
-    border: 2px solid #ff4081;  /* Highlight color, for example, a bright pink */
+    border: 2px solid #e67da0;  /* Highlight color, for example, a bright pink */
     border-radius: 50%;  /* Optional: round borders for circular effect */
 }
 
