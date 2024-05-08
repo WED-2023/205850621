@@ -1,7 +1,147 @@
-#menu
-{
-	position: fixed;
-	width: 100%;
-	height: 35px;
-	background: white;
+:root {
+    --primary-color: #252525; /* Dark grey for text and important elements */
+    --secondary-color: #ff4081; /* Vibrant pink for accents */
+    --background-color: #f4f4f4; /* Light grey background */
+    --menu-hover-color: #cccccc; /* Light grey for menu hover */
+    --text-color: #333; /* Dark grey for regular text */
+    --font-family: 'Arial', sans-serif; /* Clean and modern font */
+    --header-font-family: 'Georgia', serif; /* Elegant font for headings */
+    --link-hover-color: #ffffff; /* Bright white for hover effects */
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 18px; /* Increased font size for better readability */
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 30px 50px; /* Increased padding for a more spacious look */
+    display: flex;
+    justify-content: space-between; /* Aligns logo and nav to the sides */
+    align-items: center;
+}
+
+header .logo img {
+    height: 100px; /* Increased logo size for better visibility */
+}
+
+#menu {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Increased space between menu items */
+    margin: 0;
+    font-size: 20px; /* Larger font size for easier navigation */
+}
+
+#menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+#menu li a:hover, #menu li a:focus {
+    color: var(--link-hover-color);
+    background-color: var(--menu-hover-color);
+    border-radius: 8px; /* Slightly larger radius for smoother hover effect */
+}
+
+.section {
+    margin: 50px; /* Slightly larger margin for more distinct sections */
+    padding: 30px; /* Increased padding for more space inside sections */
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow for better depth perception */
+    border-left: 10px solid var(--secondary-color); /* Thicker border for better visibility */
+}
+
+h1, h2, h3 {
+    font-family: var(--header-font-family);
+    margin-bottom: 30px; /* Increased margin for clearer sectioning */
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 28px; /* Larger heading size for better visibility */
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Larger minimum size for images */
+    gap: 20px; /* Increased gap for better separation of images */
+}
+
+.gallery-img img {
+    border-radius: 10px; /* Larger radius for softer image edges */
+    transition: transform 0.5s ease-in-out; /* Smoother transition for hover effect */
+}
+
+.gallery-img img:hover {
+    transform: scale(1.1); /* More noticeable scale to indicate interactivity */
+}
+
+footer {
+    padding: 30px; /* Increased padding for a more substantial footer */
+    background-color: var(--primary-color);
+}
+
+form input, form textarea, form select {
+    padding: 15px; /* More padding for easier interaction */
+    font-size: 18px; /* Larger font size for forms */
+}
+
+form button {
+    padding: 15px 30px; /* Larger button for easier clicking */
+    font-size: 20px; /* Increased font size for clearer text on buttons */
+}
+
+form button:hover {
+    background-color: #e6005c; /* A darker shade of the accent color for hover state */
+}
+/* Enhanced Title Styling */
+.title {
+    text-align: center; /* Center-aligns the title */
+    font-size: 2.5em; /* Makes title larger */
+    color: var(--primary-color);
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.title:hover {
+    color: var(--secondary-color); /* Changes color on hover */
+}
+
+.title::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: var(--secondary-color);
+    transition: width 0.5s ease;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.title:hover::after {
+    width: 50%; /* Underline expands on hover */
+}
+
+/* Adding shadow for 3D effect on hover */
+.title:hover {
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+}
+
+/* Accessibility with focus */
+.title:focus {
+    outline: none;
+    color: var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color);
 }
