@@ -55,12 +55,22 @@
                 <h2 class="title" tabindex="0">My Photos</h2>
                 <div class="slideshow-container">
                     <!-- Slideshow images -->
-                    <div class="mySlides fade">
+                    <div class="slides fade">
                         <img src="pictures/cher2.jpg" alt="Cher performing with Tina Turner" class="gallery-img">
+                    </div>
+                    <div class="slides fade">
                         <img src="pictures/cher4.jpg" alt="Cher with her child" class="gallery-img">
+                    </div>
+                    <div class="slides fade">
                         <img src="pictures/cher5.jpg" alt="Cher in Burlesque movie poster" class="gallery-img">
+                    </div>
+                    <div class="slides fade">
                         <img src="pictures/cher6.jpg" alt="Classic portrait of Cher" class="gallery-img">
+                    </div>
+                    <div class="slides fade">
                         <img src="pictures/cher7.jpg" alt="Cher in a black and white photo" class="gallery-img">
+                    </div>
+                    <div class="slides fade">
                         <img src="pictures/cher8.jpg" alt="Another classic portrait of Cher" class="gallery-img">
                     </div>
                     <!-- Navigation arrows -->
@@ -71,7 +81,7 @@
 
             <!-- Featured Video section -->
             <section id="featured-video" class="section">
-                <h2>Featured Video</h2>
+                <h2>My Playlist</h2>
                 <div class="video-container interactive">
                     <!-- Embedded YouTube video -->
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/wwCykGDEp7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -179,7 +189,7 @@
 
         function showSlides(n) {
             var i;
-            var slides = document.getElementsByClassName("gallery-img");
+            var slides = document.getElementsByClassName("slides");
             if (n > slides.length) {slideIndex = 1}
             if (n < 1) {slideIndex = slides.length}
             for (i = 0; i < slides.length; i++) {
@@ -217,7 +227,7 @@
             showSlides();
 
             function showSlides() {
-                let slides = document.querySelectorAll('.mySlides .gallery-img');
+                let slides = document.querySelectorAll('.slides .gallery-img');
                 for (let i = 0; i < slides.length; i++) {
                     slides[i].style.display = 'none';
                 }

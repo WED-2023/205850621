@@ -37,13 +37,13 @@ header {
 
 /* Navigation Styles */
 nav {
-    flex-grow: 1;  /* Allows the nav to take available space */
+    flex-grow: 1;  
 }
 
 .logo {
     display: flex;
     align-items: center;
-    margin-right: 20px; /* Adjust or remove if necessary */
+    margin-right: 20px; 
 }
 
 #menu {
@@ -190,7 +190,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #d15d84; /* Adjusted hover color */
+    background-color: #d15d84; 
 }
 
 /* Emoji Picker Styles */
