@@ -1,266 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Meta tags for character encoding and viewport settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title of the webpage -->
+    <title>Cher Official Website</title>
+    
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <!-- Header section -->
     <header>
+        <!-- Logo section -->
         <div class="logo">
-            <img src="pictures/cherlogo.jpg" alt="Cher Logo" style="height: 100px;"> <!-- Adjust size as needed -->
+            <img src="pictures/cherlogo.jpg" alt="Cher Logo" style="height: 60px;">
         </div>
-        <ul id="menu">
-            <li><a href="#about">About Me</a></li>  <!-- Newly added menu item -->
-            <li><a href="#photos">My Photos</a></li>
-            <li><a href="#featured-video">My Playlist</a></li>
-            <li><a href="#like">Like</a></li>
-            <li><a href="#qrcode">QR Code</a></li>
-            <li><a href="#qa">Q&A</a></li>
-            <li><a href="#contact">Contact Me</a></li>
-        </ul>
+        <!-- Navigation menu -->
+        <nav>
+            <ul id="menu">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#photos">My Photos</a></li>
+                <li><a href="#featured-video">My Playlist</a></li>
+                <li><a href="#like">Like</a></li>
+                <li><a href="#qrcode">QR Code</a></li>
+                <li><a href="#qa">Q&A</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </nav>
     </header>
     
+    <!-- Main content section -->
     <main>
+        <!-- Article container -->
         <article>
+            <!-- About Me section -->
             <section id="about" class="section">
-                <h2>About Me</h2>
-            <p>Hello, I'm Cher, often called the "Goddess of Pop." Born Cherilyn Sarkisian on May 20, 1946, in El Centro, California, I've been a part of the entertainment world for over six decades, shaping the music and film industry with my distinctive voice and dynamic presence.
+                <h2 class="title" tabindex="0">About Me</h2>
+                <p>Hello, I'm Cher, just a regular gal from El Centro, California, born as Cherilyn Sarkisian on May 20, 1946.<br>
+                My life's been quite the journey, filled with ups and downs. In the swinging '60s, I kicked off my career with Sonny & Cher, singing hits like "I Got You Babe."<br>
+                But it wasn't all glitz and glam; I faced my share of struggles along the way.<br> Despite the challenges, music has always been my passion, thanks to my mom, Georgia Holt, who passed on her love for performing.<br>
+                And when I'm not belting out tunes, you'll find me fighting for causes close to my heart, like supporting veterans and kids in need.<br>
+                My love life's been a rollercoaster too, with marriages and breakups making headlines. But through it all, I've stayed true to myself and kept on singing.<br>
+                Life's been one heck of a ride, but I wouldn't trade it for the world.</p>
+            </section>
 
-                My Journey
-                My career began in the 1960s when I emerged as one half of Sonny & Cher, captivating audiences with the hit "I Got You Babe." From these early days, I ventured into a solo career that has brought me immense success with chart-topping singles like "Gypsys, Tramps & Thieves," "Half-Breed," and "Believe." My love for music is matched by my passion for acting, highlighted by my Academy Award-winning role in "Moonstruck."
-                
-                Beyond the Stage
-                Offstage, I'm deeply committed to various philanthropic causes, focusing on veterans' rights, health research, and children's welfare. I believe in using my platform to advocate for those who are less fortunate and to promote positive change.
-                
-                Influences
-                My life has been greatly influenced by my mother, Georgia Holt, who instilled in me the love of music and performing. I am also inspired by the timeless elegance and strength of Audrey Hepburn and Katharine Hepburn, whose spirits resonate in my approach to both my career and personal life.
-                
-                Living Legacy
-                As I continue to evolve and embrace new challenges, I remain dedicated to entertaining and inspiring new generations. I cherish the opportunity to connect with fans and share my journey—every step of the way has been an unforgettable adventure.
-                
-                This personalized introduction reflects my voice and experiences, offering fans and newcomers alike a glimpse into my world. Thank you for visiting my site and joining me on this incredible journey.</p>
-        </section>
+            <!-- Photos section -->
+            <section id="photos" class="section">
+                <h2 class="title" tabindex="0">My Photos</h2>
+                <div class="slideshow-container">
+                    <!-- Slideshow images -->
+                    <div class="mySlides fade">
+                        <img src="pictures/cher2.jpg" alt="Cher performing with Tina Turner" class="gallery-img">
+                        <img src="pictures/cher4.jpg" alt="Cher with her child" class="gallery-img">
+                        <img src="pictures/cher5.jpg" alt="Cher in Burlesque movie poster" class="gallery-img">
+                        <img src="pictures/cher6.jpg" alt="Classic portrait of Cher" class="gallery-img">
+                        <img src="pictures/cher7.jpg" alt="Cher in a black and white photo" class="gallery-img">
+                        <img src="pictures/cher8.jpg" alt="Another classic portrait of Cher" class="gallery-img">
+                    </div>
+                    <!-- Navigation arrows -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>      
+            </section>
 
-        <section id="photos" class="section">
-            <h2 class="title" tabindex="0">My Photos</h2>
-            <div class="slideshow-container">
-                <div class="mySlides fade">
-                <img src="pictures\cher2.jpg" alt="Cher performing with Tina Turner" class="gallery-img">
-                <img src="pictures\cher4.jpg" alt="Cher with her child" class="gallery-img">
-                <img src="pictures\cher5.jpg" alt="Cher in Burlesque movie poster" class="gallery-img">
-                <img src="pictures\cher6.jpg" alt="Classic portrait of Cher" class="gallery-img">
-                <img src="pictures\cher7.jpg" alt="Cher in a black and white photo" class="gallery-img">
-                <img src="pictures\cher8.jpg" alt="Another classic portrait of Cher" class="gallery-img">
-            </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>      
-        </section>
-        
-
-        <section id="featured-video" class="section">
-            <h2>Featured Video</h2>
-            <div class="video-container interactive">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/wwCykGDEp7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <p>Check out this special performance!</p>
-        </section>
-        
-
-        <section id="like" class="section">
-            <h2>Like</h2>
-            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fcher%2Fevents%2F%3F_rdr&width=450&layout&action&size&share=true&height=35&appId" width="450" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-            <p>Give me a like. Feature social media buttons that allow visitors to follow Cher on various platforms.</p>
-        </section>
-
-        <section id="qrcode" class="section">
-            <h2>Scan this QR Code</h2>
-            <p>Scan the QR code with your mobile device to access exclusive content or visit a specific page.</p>
-            <div class="qr-container interactive">
-                <img src="pictures/qrcode.png" alt="Scan this QR code to visit our page" class="qr-code">
-            </div>
-        </section>
-        
-
-        <section id="qa" class="section">
-            <h2>Q&A</h2>
-            <p>
-                Differences Between Web1, Web2, and Web3
-                Here are three primary differences between Web1, Web2, and Web3:
-                
-                User Interaction and Content Creation:
-                Web1: Known as the "static" or "read-only" web. Websites were mostly informational and consisted of static pages. User interaction was minimal, and content creation was mainly in the hands of website owners or developers.
-                Web2: Often referred to as the "participative social web." It emphasizes user-generated content, usability, and interoperability for end users. Web2 platforms like Facebook, YouTube, and Twitter allow users to create, share, and interact dynamically.
-                Web3: This is the "semantic web" which integrates machine understanding, allowing computers to analyze all the data on the web. Web3 incorporates artificial intelligence and blockchain technology, facilitating a decentralized and secure environment. It aims for personal data sovereignty and enables interactions with smart contracts and decentralized applications (DApps).
-                Data Ownership and Control:
-                Web1: Data is static and stored on servers controlled by website operators. Users consume content without any control over it.
-                Web2: While interactive and dynamic, data is predominantly controlled by central entities (e.g., social media platforms). These entities own the user data, leading to privacy concerns.
-                Web3: Promotes data ownership by users through blockchain technology. Data is stored on decentralized networks, and users retain control over their personal information.
-                Technology and Protocols:
-                Web1: Built on basic HTML, URLs, and HTTP. It's mostly a system of linked HTML pages viewed through a browser.
-                Web2: Utilizes more complex web technologies like JavaScript, CSS, HTML5, and APIs that allow greater interactivity and functionality.
-                Web3: Leverages blockchain, decentralized networks, and token-based economics. It also involves technologies like smart contracts to automate transactions and interactions without intermediaries.
-                Use Case: Searching for "Drug Side Effects"
-                Web1 Scenario:
-                Description: A user would visit specific medical websites or digital libraries to read articles on drug side effects. The interaction is purely informational, with the user acting as a consumer of content.
-                Example: Visiting the National Institutes of Health website to read a static document about a specific drug.
-                Web2 Scenario:
-                Description: Users can interact with content, leave reviews, and share experiences directly on platforms. There might be forums, comment sections on healthcare websites, or social media groups where users discuss and share personal stories related to drug side effects.
-                Example: Searching on WebMD where other users have posted reviews of drugs, including detailed personal experiences and side effects. Users can ask questions and receive answers from the community.
-                Web3 Scenario:
-                Description: Utilizes decentralized data and AI to personalize and secure information. Users might access a decentralized application (DApp) that pulls globally aggregated data on drug side effects without compromising their privacy.
-                Example: Using a DApp where you can query drug interactions and receive real-time data from a blockchain network, ensuring the information is tamper-proof and up-to-date. Users might use cryptocurrency to pay for in-depth medical research or join decentralized autonomous organizations (DAOs) focusing on specific medical issues.
-                These scenarios highlight the evolution from static content consumption to interactive communities and finally to user-empowered, secure, and personalized data interaction environments.</p>
-        </section>
-
-        <section id="contact" class="section">
-            <h2>Contact Me</h2>
-            <form action="submit_form.php" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            
-            
-                <label>Choose an Emoji:</label>
-                <div class="emoji-picker">
-                    <span role="img" aria-label="happy" onclick="addEmoji('😀')">😀</span>
-                    <span role="img" aria-label="sad" onclick="addEmoji('😢')">😢</span>
-                    <span role="img" aria-label="cool" onclick="addEmoji('😎')">😎</span>
-                    <span role="img" aria-label="angry" onclick="addEmoji('😡')">😡</span>
-                    <span role="img" aria-label="love" onclick="addEmoji('❤️')">❤️</span>
+            <!-- Featured Video section -->
+            <section id="featured-video" class="section">
+                <h2>Featured Video</h2>
+                <div class="video-container interactive">
+                    <!-- Embedded YouTube video -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/wwCykGDEp7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
-                
+                <p>Check out this special performance!</p>
+            </section>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-            
-                <button type="submit">Send</button>
-            </form>
-            
-        </section>
-        
-        
+            <!-- Like section -->
+            <section id="like" class="section">
+                <h2>Like</h2>
+                <!-- Facebook Like button -->
+                <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fcher%2Fevents%2F%3F_rdr&width=450&layout&action&size&share=true&height=35&appId" width="450" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                <p>Like my Facebook page!</p>
+            </section>
+
+            <!-- QR Code section -->
+            <section id="qrcode" class="section">
+                <h2>Scan this QR Code</h2>
+                <p>Scan the QR code with your mobile device to access this website.</p>
+                <div class="qr-container interactive">
+                    <img src="pictures/qrcode.png" alt="Scan this QR code to visit our page" class="qr-code">
+                </div>
+            </section>
+
+            <!-- Q&A section -->
+            <section id="qa" class="section">
+                <h2>Q&A</h2>
+                <h4>Three Main Differences Between Web1, Web2, and Web3</h4>
+                <ol>
+                    <li><strong>Web1:</strong> The first version of the web, primarily accessed through simple text-based browsers and based on static text content.</li>
+                    <li><strong>Web2:</strong> The evolution of the web into interactive platforms, allowing for higher interactivity, user-generated content, and dynamic content creation.</li>
+                    <li><strong>Web3:</strong> The future development of the web based on blockchain technologies and artificial intelligence, featuring frictionless payment websites, smart contracts, and decentralized applications.</li>
+                </ol>
+                <h4>Explanation with Usage Scenario Examples:</h4>
+                <h4>Web1:</h4>
+                <p>When searching for drug side effects on Web1, you may come across static pages with basic and often outdated information, without the ability to influence or contribute content.</p>
+                <h4>Web2:</h4>
+                <p>A search for the same drug side effects on Web2 might lead you to forums, drug review websites, or Facebook groups where users share their experiences and answer similar questions. Here, you can receive close and personal information from other users, ask questions, and contribute your insights.</p>
+                <h4>Web3:</h4>
+                <p>In Web3, this search could be conducted through blockchain-based platforms where you can access smart contracts based on user data. Instead of regular websites, you might use decentralized applications that allow you to securely search for information and have an advantage over regular users.</p>
+            </section>
+
+<!-- Contact Me section -->
+<section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <!-- Contact form -->
+    <form id="contactForm" onsubmit="sendEmail(event)">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label>Choose an Emoji:</label>
+            <!-- Emoji picker -->
+            <div class="emoji-picker">
+                <span role="img" aria-label="happy" onclick="addEmoji('😀')">😀</span>
+                <span role="img" aria-label="sad" onclick="addEmoji('😢')">😢</span>
+                <span role="img" aria-label="cool" onclick="addEmoji('😎')">😎</span>
+                <span role="img" aria-label="angry" onclick="addEmoji('😡')">😡</span>
+                <span role="img" aria-label="love" onclick="addEmoji('❤️')">❤️</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send</button>
+    </form>
+</section>
+        </article>
     </main>
 
+    <!-- Footer section -->
     <footer>
         <p>© 2024 Cher Official Website. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript for interactive functionality -->
     <script type="text/javascript">
-        $(function() {
-            $("#menu a").click(function(e) {
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                $('html, body').animate({
-                    scrollTop: $(this.hash).offset().top - 50 // Adjusts scroll position for fixed header
-                }, 1000);
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
 
-        $(document).scroll(function() {
-            $('#menu').toggle($(this).scrollTop() > 100); // Adjust when to show or hide the navigation
+        // Slideshow functionality
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("gallery-img");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+
+    // Emoji picker functionality
+    function addEmoji(emoji) {
+        const messageInput = document.getElementById('message');
+        messageInput.value += emoji;  // Append the selected emoji to the message input
+    }
+
+    // Function to handle form submission
+    function sendEmail(event) {
+        event.preventDefault(); // Prevent the form from submitting the traditional way
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Replace this with the recipient email address
+        const recipient = 'timorlan@post.bgu.ac.il';
+
+        const subject = `New message from website visitor`;
+        const body = `Message: ${message}%0D%0A%0D%0AReply to: ${email}`;
+
+        const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        window.location.href = mailtoLink;
+    }
+
+        // Auto slideshow functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                let slides = document.querySelectorAll('.mySlides .gallery-img');
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = 'none';
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) slideIndex = 1;
+                slides[slideIndex - 1].style.display = 'block';
+                setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
         });
     </script>
-    <script>
-        document.getElementById('emoji').addEventListener('change', function() {
-            var messageBox = document.getElementById('message');
-            messageBox.value += ' ' + this.value; // Adds the selected emoji to the message content
-        });
-        </script>
-        <script>
-            var slideIndex = 1;
-            showSlides(slideIndex);
-            
-            function plusSlides(n) {
-              showSlides(slideIndex += n);
-            }
-            
-            function currentSlide(n) {
-              showSlides(slideIndex = n);
-            }
-            
-            function showSlides(n) {
-              var i;
-              var slides = document.getElementsByClassName("gallery-img");
-              if (n > slides.length) {slideIndex = 1}
-              if (n < 1) {slideIndex = slides.length}
-              for (i = 0; i < slides.length; i++) {
-                  slides[i].style.display = "none";
-              }
-              slides[slideIndex-1].style.display = "block";
-            }
-            </script>
-        <script>
-document.querySelector('.prev').addEventListener('click', function() {
-    slideShow(-1);
-});
-document.querySelector('.next').addEventListener('click', function() {
-    slideShow(1);
-});
-
-let currentSlide = 0;
-function slideShow(step) {
-    const slides = document.querySelector('.slides');
-    const totalSlides = document.querySelectorAll('.slides img').length;
-    currentSlide = (currentSlide + step + totalSlides) % totalSlides;
-    slides.style.transform = `translateX(-${currentSlide * 820}px)`; // 800px image width + 20px margin
-}
-            </script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const slides = document.querySelectorAll('.mySlides');
-                let slideIndex = 0;
-                showSlides();
-            
-                function showSlides() {
-                    let i;
-                    for (i = 0; i < slides.length; i++) {
-                        slides[i].style.display = 'none';
-                    }
-                    slideIndex++;
-                    if (slideIndex > slides.length) {
-                        slideIndex = 1;
-                    }
-                    slides[slideIndex - 1].style.display = 'block';
-                    setTimeout(showSlides, 2000); // Change image every 2 seconds
-                }
-            });
-            // Improved slideshow functionality
-document.addEventListener('DOMContentLoaded', function() {
-    let slideIndex = 0;  // Initialize slide index
-    showSlides();  // Initial call to function
-
-    function showSlides() {
-        let slides = document.querySelectorAll('.mySlides .gallery-img'); // Select only images within the slideshow
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = 'none';  // Hide all images
-        }
-        slideIndex++;  // Move to the next image
-        if (slideIndex > slides.length) slideIndex = 1;  // Loop back to the first image
-        slides[slideIndex - 1].style.display = 'block';  // Display the current image
-        setTimeout(showSlides, 2000); // Change image every 2 seconds
-    }
-});
-function addEmoji(emoji) {
-    const messageInput = document.getElementById('message');
-    messageInput.value += emoji;  // Append the selected emoji to the message input
-}
-
-function addEmoji(emoji) {
-    const messageInput = document.getElementById('message');
-    messageInput.value += emoji;  // Append the selected emoji to the message input
-
-}
-
-            </script>
-
-
-        
 </body>
 </html>
-<link rel="stylesheet" type="text/css" href="style.css" />
