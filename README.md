@@ -1,4 +1,9 @@
 # Cher Website
+**link to the website**:  https://wed-2023.github.io/205850621/
+
+**My ID:** 205850621
+
+
 
 Welcome to the official website of Cher! This website provides an overview of Cher's life, career, and recent activities. It includes sections for about me, photos, featured videos, likes, QR code, Q&A, and contact information. The website is designed to be interactive and responsive, ensuring a smooth user experience across different devices.
 
@@ -37,6 +42,5 @@ Welcome to the official website of Cher! This website provides an overview of Ch
 
 ## Contact
 For any inquiries or feedback, please contact:
-
 **Name**: Timor Lankri
 **Email**: timorlan@post.bgu.ac.il
