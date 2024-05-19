@@ -5,7 +5,9 @@
 
 
 
-Welcome to the official website of Cher! This website provides an overview of Cher's life, career, and recent activities. It includes sections for about me, photos, featured videos, likes, QR code, Q&A, and contact information. The website is designed to be interactive and responsive, ensuring a smooth user experience across different devices.
+Welcome to the official website of Cher!
+Cher was my grandmother's favorite singer so I made this website for her.
+This website provides an overview of Cher's life, career, and recent activities. It includes sections for about me, photos, featured videos, likes, QR code, Q&A, and contact information. The website is designed to be interactive and responsive, ensuring a smooth user experience across different devices.
 
 ## Table of Contents
   - [Features](#features)
