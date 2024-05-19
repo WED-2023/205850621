@@ -124,37 +124,37 @@
                 <p>In Web3, this search could be conducted through blockchain-based platforms where you can access smart contracts based on user data. Instead of regular websites, you might use decentralized applications that allow you to securely search for information and have an advantage over regular users.</p>
             </section>
 
-<!-- Contact Me section -->
-<section id="contact" class="section">
-    <h2>Contact Me</h2>
-    <!-- Contact form -->
-    <form id="contactForm" onsubmit="sendEmail(event)">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label>Choose an Emoji:</label>
-            <!-- Emoji picker -->
-            <div class="emoji-picker">
-                <span role="img" aria-label="happy" onclick="addEmoji('😀')">😀</span>
-                <span role="img" aria-label="sad" onclick="addEmoji('😢')">😢</span>
-                <span role="img" aria-label="cool" onclick="addEmoji('😎')">😎</span>
-                <span role="img" aria-label="angry" onclick="addEmoji('😡')">😡</span>
-                <span role="img" aria-label="love" onclick="addEmoji('❤️')">❤️</span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-        </div>
-        <button type="submit">Send</button>
-    </form>
-</section>
+            <!-- Contact Me section -->
+            <section id="contact" class="section">
+                <h2>Contact Me</h2>
+                <!-- Contact form -->
+                <form id="contactForm" onsubmit="sendEmail(event)">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Choose an Emoji:</label>
+                        <!-- Emoji picker -->
+                        <div class="emoji-picker">
+                            <span role="img" aria-label="happy" onclick="addEmoji('😀')">😀</span>
+                            <span role="img" aria-label="sad" onclick="addEmoji('😢')">😢</span>
+                            <span role="img" aria-label="cool" onclick="addEmoji('😎')">😎</span>
+                            <span role="img" aria-label="angry" onclick="addEmoji('😡')">😡</span>
+                            <span role="img" aria-label="love" onclick="addEmoji('❤️')">❤️</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+            </section>
         </article>
     </main>
 
@@ -176,67 +176,46 @@
         });
 
         // Slideshow functionality
-        var slideIndex = 1;
-        showSlides(slideIndex);
+        let slideIndex = 0;
+        showSlides();
 
         function plusSlides(n) {
             showSlides(slideIndex += n);
         }
 
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("slides");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
             slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
         }
 
-    // Emoji picker functionality
-    function addEmoji(emoji) {
-        const messageInput = document.getElementById('message');
-        messageInput.value += emoji;  // Append the selected emoji to the message input
-    }
+        // Emoji picker functionality
+        function addEmoji(emoji) {
+            const messageInput = document.getElementById('message');
+            messageInput.value += emoji;  // Append the selected emoji to the message input
+        }
 
-    // Function to handle form submission
-    function sendEmail(event) {
-        event.preventDefault(); // Prevent the form from submitting the traditional way
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+        // Function to handle form submission
+        function sendEmail(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
 
-        // Replace this with the recipient email address
-        const recipient = 'timorlan@post.bgu.ac.il';
+            // Replace this with the recipient email address
+            const recipient = 'timorlan@post.bgu.ac.il';
 
-        const subject = `New message from website visitor`;
-        const body = `Message: ${message}%0D%0A%0D%0AReply to: ${email}`;
+            const subject = `New message from website visitor`;
+            const body = `Message: ${message}%0D%0A%0D%0AReply to: ${email}`;
 
-        const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-        window.location.href = mailtoLink;
-    }
-
-        // Auto slideshow functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            let slideIndex = 0;
-            showSlides();
-
-            function showSlides() {
-                let slides = document.querySelectorAll('.slides .gallery-img');
-                for (let i = 0; i < slides.length; i++) {
-                    slides[i].style.display = 'none';
-                }
-                slideIndex++;
-                if (slideIndex > slides.length) slideIndex = 1;
-                slides[slideIndex - 1].style.display = 'block';
-                setTimeout(showSlides, 2000); // Change image every 2 seconds
-            }
-        });
+            window.location.href = mailtoLink;
+        }
     </script>
 </body>
 </html>
